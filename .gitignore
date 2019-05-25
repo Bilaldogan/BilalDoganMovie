@@ -1,0 +1,28 @@
+# files created by XCode
+build/
+DerivedData/
+*.build/
+
+*.pbxuser
+!default.pbxuser
+*.mode1
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+*.xcclassmodel/
+xcuserstate
+*.xcuserstate
+xcuserdata
+*.moved-aside
+
+# OSX Noise
+.DS_Store
+profile
+*~
+*.DS_Store
+*.swp
+*.out
+*.zip

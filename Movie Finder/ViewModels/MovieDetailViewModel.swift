@@ -40,6 +40,7 @@ final class MovieDetailViewModel: MovieDetailViewModelProtocol {
                 self.movieData = data
                 let moviePresentation = FullMoviePresentation(model: self.movieData)
                 self.delegate?.show(movie: moviePresentation)
+                MFAnalyticsHelper.shared.logMovie(movie: self.movieData)
                 self.showActors()
             case .failure(let error):
                 self.handle(error: error)

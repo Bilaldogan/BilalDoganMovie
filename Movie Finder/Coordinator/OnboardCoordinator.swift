@@ -28,6 +28,8 @@ import Foundation
     
     @objc func splashEnded() {
         parentCoordinator?.didFinishOnboarding()
-        parentCoordinator?.childDidFinish(self)
+        if parentCoordinator?.reachabilityManager?.isReachable ?? false {
+            self.parentCoordinator?.childDidFinish(self)
+        }
     }
 }

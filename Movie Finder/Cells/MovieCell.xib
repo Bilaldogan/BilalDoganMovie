@@ -20,25 +20,25 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gmi-3d-Y2k">
-                        <rect key="frame" x="30" y="21" width="396" height="153.5"/>
+                        <rect key="frame" x="30" y="65" width="396" height="109.5"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g2y-F2-pTv">
-                                <rect key="frame" x="0.0" y="31" width="396" height="122.5"/>
+                                <rect key="frame" x="0.0" y="31" width="396" height="78.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="9KJ-b3-aa7">
-                                        <rect key="frame" x="128" y="10" width="265" height="24"/>
+                                        <rect key="frame" x="128" y="10" width="265" height="16.5"/>
                                         <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eSq-cq-yJb">
-                                        <rect key="frame" x="128" y="41.5" width="37.5" height="18"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eSq-cq-yJb">
+                                        <rect key="frame" x="128" y="34" width="37.5" height="18"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n2t-8V-Y9p">
-                                        <rect key="frame" x="128" y="67" width="35.5" height="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n2t-8V-Y9p">
+                                        <rect key="frame" x="128" y="59.5" width="35.5" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -50,6 +50,7 @@
                                     <constraint firstItem="eSq-cq-yJb" firstAttribute="top" secondItem="9KJ-b3-aa7" secondAttribute="bottom" constant="7.5" id="VgZ-DZ-jXj"/>
                                     <constraint firstItem="n2t-8V-Y9p" firstAttribute="leading" secondItem="eSq-cq-yJb" secondAttribute="leading" id="hsr-dW-6Jr"/>
                                     <constraint firstItem="eSq-cq-yJb" firstAttribute="leading" secondItem="9KJ-b3-aa7" secondAttribute="leading" id="jUr-dS-5vv"/>
+                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="n2t-8V-Y9p" secondAttribute="bottom" constant="2" id="kx4-CG-zMc"/>
                                     <constraint firstItem="9KJ-b3-aa7" firstAttribute="top" secondItem="g2y-F2-pTv" secondAttribute="top" constant="10" id="pkl-Xg-hD7"/>
                                     <constraint firstItem="n2t-8V-Y9p" firstAttribute="top" secondItem="eSq-cq-yJb" secondAttribute="bottom" constant="7.5" id="tf7-u4-c3W"/>
                                 </constraints>
@@ -69,7 +70,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tVW-rd-fbi">
-                                <rect key="frame" x="10" y="0.0" width="105" height="143.5"/>
+                                <rect key="frame" x="10" y="0.0" width="105" height="99.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">

@@ -8,17 +8,22 @@
 
 import Foundation
 import UIKit
+import Alamofire
 
 class AppCoordinator:NSObject, Coordinator {
+    
     @objc weak var window: UIWindow!
     var childCoordinators: [Coordinator] = [Coordinator]()
     var navigationController: UINavigationController
+    var reachabilityManager = NetworkReachabilityManager()
     
     @objc init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
     
     @objc func start() {
+        startListenNetworkStatus()
+        
         let onBoardCoordinator = OnboardCoordinator(navigationController: navigationController)
         onBoardCoordinator.parentCoordinator = self
         self.childCoordinators.append(onBoardCoordinator)
@@ -26,6 +31,10 @@ class AppCoordinator:NSObject, Coordinator {
     }
     
     @objc func didFinishOnboarding() {
+        guard NetworkReachabilityManager()?.isReachable ?? false else {
+            showNetworkErrorOnTop()
+            return
+        }
         let navigationController = UINavigationController()
         self.navigationController = navigationController
         let mainCoordinator = MainCoordinator(navigationController: navigationController)
@@ -35,6 +44,7 @@ class AppCoordinator:NSObject, Coordinator {
         guard let window = UIApplication.shared.delegate?.window else { return }
         window?.rootViewController = self.navigationController
         window?.makeKeyAndVisible()
+       
     }
     
     func childDidFinish(_ child: Coordinator?) {
@@ -43,6 +53,48 @@ class AppCoordinator:NSObject, Coordinator {
                 childCoordinators.remove(at: index)
                 break
             }
+        }
+    }
+    
+    func checkNetwork() {
+        if NetworkReachabilityManager()?.isReachable ?? false {
+           dismisNetworkError()
+        }
+        startListenNetworkStatus()
+    }
+    
+    private func startListenNetworkStatus() {
+        //TODO: NetworkReachabilityManager dot working correclty its. if use one instance its stuck on notreachable state
+        reachabilityManager = NetworkReachabilityManager()
+        reachabilityManager?.listener =  { [unowned self] status in
+            switch status {
+            case .notReachable:
+                self.showNetworkErrorOnTop()
+            default:
+                self.dismisNetworkError()
+            }
+        }
+        reachabilityManager?.startListening()
+    }
+    
+    private func networkListener(status: NetworkReachabilityManager.NetworkReachabilityStatus) {
+        switch status {
+        case .notReachable:
+            showNetworkErrorOnTop()
+        default:
+            break
+        }
+    }
+    
+    private func showNetworkErrorOnTop() {
+        let noConnectionVC = NoConnectionVC()
+        noConnectionVC.coordinator = self
+        self.navigationController.present(noConnectionVC, animated: true, completion: nil)
+    }
+    
+    private func dismisNetworkError() {
+        if let connectionVC = self.navigationController.presentedViewController as? NoConnectionVC {
+            connectionVC.dismiss(animated: true, completion:nil)
         }
     }
 }

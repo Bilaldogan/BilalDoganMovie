@@ -1,5 +1,7 @@
 PODS:
   - Alamofire (4.8.2)
+  - Firebase/Analytics (6.1.0):
+    - Firebase/Core
   - Firebase/Core (6.1.0):
     - Firebase/CoreOnly
     - FirebaseAnalytics (= 6.0.1)
@@ -71,6 +73,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - Firebase/Analytics
   - Firebase/Core
   - Firebase/RemoteConfig
   - lottie-ios
@@ -107,6 +110,6 @@ SPEC CHECKSUMS:
   Protobuf: 7a877b7f3e5964e3fce995e2eb323dbc6831bb5a
   SDWebImage: d4f87d7d36c8a4d9f9459dc282e0caa057fdf935
 
-PODFILE CHECKSUM: f1b3a8b9836b85e10d9cb5240081ed29952fc75d
+PODFILE CHECKSUM: 527b3c5d1ebb3980791e3b1a5c009800d452cd56
 
 COCOAPODS: 1.6.1

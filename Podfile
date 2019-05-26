@@ -8,6 +8,7 @@ target 'Movie Finder' do
   # Pods for Movie Finder
   pod 'Firebase/Core'
   pod 'Firebase/RemoteConfig'
+  pod 'Firebase/Analytics'
   pod 'Alamofire'
   pod 'lottie-ios'
   pod 'SDWebImage'

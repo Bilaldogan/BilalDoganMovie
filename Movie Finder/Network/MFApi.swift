@@ -72,6 +72,8 @@ public class MFApi {
                 }
         }
     }
+    
+    // MARK: -Request Methods
 
     func getMoviesWith(searchKey: String,
                        completionHandler: @escaping (Swift.Result<SearchResponseModel, NetworkError>) -> Void) {
@@ -87,42 +89,5 @@ public class MFApi {
                           "plot" : "full"],
              completionHandler: completionHandler)
     }
-    
-    // MARK: -Request Methods
-//    public func getVenuesNearBy(city:String,date:String,keyword:String,
-//                                success: @escaping SuccessHandler<VenuesDataModel>,
-//                                error: @escaping (ErrorHandler)){
-//
-//        call(endPoint: PlacesEndPoint.SearchVenuesWithNearBy,
-//             parameters: ["location_name":city, "formatted_date":date, "query_string": keyword,
-//                          "client_id": self.clientId,"client_secret": self.clientSecret],
-//             encoding: JSONEncoding.default,
-//             success: success,
-//             error: error)
-//    }
-//
-//    public func getVenuesWith(lat:String,lng: String,date:String,keyword:String,
-//                              success: @escaping SuccessHandler<VenuesDataModel>,
-//                              error: @escaping (ErrorHandler)){
-//
-//        call(endPoint: PlacesEndPoint.SearchVenuesWithCurrentLocation,
-//             parameters: ["lat":lat,"lng":lng, "formatted_date":date, "query_string": keyword,
-//                          "client_id": self.clientId,"client_secret": self.clientSecret],
-//             encoding: JSONEncoding.default,
-//             success: success,
-//             error: error)
-//    }
-//
-//    public func getVenuesDetail(venueId:String,date: String,
-//                                success: @escaping SuccessHandler<VenueDetailDataModel>,
-//                                error: @escaping (ErrorHandler)){
-//
-//        call(endPoint: PlacesEndPoint.GetDetailOfVenue,
-//             parameters: ["venue_id":venueId, "formatted_date":date,
-//                          "client_id": self.clientId,"client_secret": self.clientSecret],
-//             encoding: JSONEncoding.default,
-//             success: success,
-//             error: error)
-//    }
     
 }

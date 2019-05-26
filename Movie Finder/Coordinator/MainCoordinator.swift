@@ -33,6 +33,7 @@ class MainCoordinator: Coordinator {
     }
     
     func backTapped() {
+        self.navigationController.setNavigationBarHidden(false, animated: true)
         self.navigationController.popViewController(animated: true)
     }
 }

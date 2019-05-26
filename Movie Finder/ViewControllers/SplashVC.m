@@ -30,8 +30,8 @@
         if (status == FIRRemoteConfigFetchStatusSuccess) {
             [self.remoteConfig activateFetched];
             [self updateTitleWithFadeAnimation];
-            [self waitTreeSecond];
         }
+        [self waitTreeSecond];
     }];
 }
 
@@ -48,7 +48,20 @@
 - (void)waitTreeSecond {
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.coordinator splashEnded];
+        [self addTapGestureIfThereIsNoConnection];
     });
+}
+
+- (void)addTapGestureIfThereIsNoConnection {
+    UITapGestureRecognizer *viewTapGeture = [[UITapGestureRecognizer alloc] initWithTarget:self  action:@selector(viewTapped:)];
+    viewTapGeture.numberOfTapsRequired = 1;
+    self.view.userInteractionEnabled = true;
+    [self.view addGestureRecognizer:viewTapGeture];
+}
+
+- (void)viewTapped: (id)sender
+{
+    [self.coordinator splashEnded];
 }
 
 @end

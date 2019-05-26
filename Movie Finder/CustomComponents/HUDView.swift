@@ -36,6 +36,7 @@ class HUDView: UIView {
         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.addSubview(blurEffectView)
     }
+    
     private func addLottieView() {
         let lottieView = AnimationView(name: "film-roll")
         lottieView.animationSpeed = 1.5

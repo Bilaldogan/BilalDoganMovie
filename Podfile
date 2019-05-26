@@ -9,6 +9,8 @@ target 'Movie Finder' do
   pod 'Firebase/Core'
   pod 'Firebase/RemoteConfig'
   pod 'Alamofire'
+  pod 'lottie-ios'
+  pod 'SDWebImage'
 
   target 'Movie FinderTests' do
     inherit! :search_paths

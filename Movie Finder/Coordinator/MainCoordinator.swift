@@ -18,8 +18,10 @@ class MainCoordinator: Coordinator {
     }
     
     func start() {
-        let vc = UIViewController()
-        vc.view.backgroundColor = .red
-        self.navigationController.pushViewController(vc, animated: false)
+        let listVC = MovieListViewController.instantiate()
+        listVC.viewModel = MovieListViewModel()
+        listVC.coordinator = self
+        
+        self.navigationController.pushViewController(listVC, animated: false)
     }
 }

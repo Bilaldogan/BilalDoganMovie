@@ -41,5 +41,39 @@
             </objects>
             <point key="canvasLocation" x="47.826086956521742" y="20.758928571428569"/>
         </scene>
+        <!--Movie List View Controller-->
+        <scene sceneID="Vps-0Q-Z4e">
+            <objects>
+                <viewController storyboardIdentifier="MovieListViewController" id="Kto-Ra-sMb" customClass="MovieListViewController" customModule="Movie_Finder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YBc-22-tYo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Pwh-RM-q5V">
+                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                                <color key="backgroundColor" red="0.95686274509803915" green="0.95686274509803915" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Kto-Ra-sMb" id="2DG-tc-hcu"/>
+                                    <outlet property="delegate" destination="Kto-Ra-sMb" id="Eho-VZ-M33"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.95686274509803915" green="0.95686274509803915" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="uoZ-Jx-oXf" firstAttribute="bottom" secondItem="Pwh-RM-q5V" secondAttribute="bottom" id="C8p-0f-Z9A"/>
+                            <constraint firstItem="uoZ-Jx-oXf" firstAttribute="trailing" secondItem="Pwh-RM-q5V" secondAttribute="trailing" id="aOI-gS-0Yd"/>
+                            <constraint firstItem="Pwh-RM-q5V" firstAttribute="leading" secondItem="uoZ-Jx-oXf" secondAttribute="leading" id="ngw-1k-FuB"/>
+                            <constraint firstItem="Pwh-RM-q5V" firstAttribute="top" secondItem="uoZ-Jx-oXf" secondAttribute="top" id="ur0-dx-iFO"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="uoZ-Jx-oXf"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="Pwh-RM-q5V" id="7c9-bq-MML"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sra-qn-PnE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="826" y="21"/>
+        </scene>
     </scenes>
 </document>

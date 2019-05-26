@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MovieCell" rowHeight="185" id="KGk-i7-Jjw" customClass="MovieCell" customModule="Movie_Finder" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="456" height="185"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="456" height="184.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gmi-3d-Y2k">
+                        <rect key="frame" x="30" y="21" width="396" height="153.5"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g2y-F2-pTv">
+                                <rect key="frame" x="0.0" y="31" width="396" height="122.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="9KJ-b3-aa7">
+                                        <rect key="frame" x="128" y="10" width="265" height="24"/>
+                                        <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eSq-cq-yJb">
+                                        <rect key="frame" x="128" y="41.5" width="37.5" height="18"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n2t-8V-Y9p">
+                                        <rect key="frame" x="128" y="67" width="35.5" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="9KJ-b3-aa7" secondAttribute="trailing" constant="3" id="KOq-c4-O3U"/>
+                                    <constraint firstItem="eSq-cq-yJb" firstAttribute="top" secondItem="9KJ-b3-aa7" secondAttribute="bottom" constant="7.5" id="VgZ-DZ-jXj"/>
+                                    <constraint firstItem="n2t-8V-Y9p" firstAttribute="leading" secondItem="eSq-cq-yJb" secondAttribute="leading" id="hsr-dW-6Jr"/>
+                                    <constraint firstItem="eSq-cq-yJb" firstAttribute="leading" secondItem="9KJ-b3-aa7" secondAttribute="leading" id="jUr-dS-5vv"/>
+                                    <constraint firstItem="9KJ-b3-aa7" firstAttribute="top" secondItem="g2y-F2-pTv" secondAttribute="top" constant="10" id="pkl-Xg-hD7"/>
+                                    <constraint firstItem="n2t-8V-Y9p" firstAttribute="top" secondItem="eSq-cq-yJb" secondAttribute="bottom" constant="7.5" id="tf7-u4-c3W"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="4" height="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.29999999999999999"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tVW-rd-fbi">
+                                <rect key="frame" x="10" y="0.0" width="105" height="143.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="1" height="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.29999999999999999"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="g2y-F2-pTv" firstAttribute="leading" secondItem="Gmi-3d-Y2k" secondAttribute="leading" id="LcW-34-rSV"/>
+                            <constraint firstItem="tVW-rd-fbi" firstAttribute="leading" secondItem="Gmi-3d-Y2k" secondAttribute="leading" constant="10" id="R6B-gc-JdE"/>
+                            <constraint firstItem="9KJ-b3-aa7" firstAttribute="leading" secondItem="tVW-rd-fbi" secondAttribute="trailing" constant="13" id="VY0-Eo-cO0"/>
+                            <constraint firstAttribute="bottom" secondItem="tVW-rd-fbi" secondAttribute="bottom" constant="10" id="aie-qe-Yk6"/>
+                            <constraint firstAttribute="bottom" secondItem="g2y-F2-pTv" secondAttribute="bottom" id="i6p-ja-TUM"/>
+                            <constraint firstItem="g2y-F2-pTv" firstAttribute="top" secondItem="Gmi-3d-Y2k" secondAttribute="top" constant="31" id="lRv-Vb-xjn"/>
+                            <constraint firstItem="tVW-rd-fbi" firstAttribute="top" secondItem="Gmi-3d-Y2k" secondAttribute="top" id="qeQ-P8-qRV"/>
+                            <constraint firstAttribute="trailing" secondItem="g2y-F2-pTv" secondAttribute="trailing" id="ysN-1b-pIm"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="tVW-rd-fbi" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="250:440" id="8WT-40-0ee"/>
+                    <constraint firstItem="Gmi-3d-Y2k" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="10" id="A5P-wX-KYH"/>
+                    <constraint firstAttribute="bottom" secondItem="Gmi-3d-Y2k" secondAttribute="bottom" constant="10" id="GIf-bH-EE9"/>
+                    <constraint firstItem="Gmi-3d-Y2k" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="30" id="VHn-d4-O6j"/>
+                    <constraint firstAttribute="trailing" secondItem="Gmi-3d-Y2k" secondAttribute="trailing" constant="30" id="pDU-CZ-W86"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="movieTitleLabel" destination="9KJ-b3-aa7" id="BCY-ug-e3l"/>
+                <outlet property="posterImageView" destination="tVW-rd-fbi" id="rr9-Zp-MTB"/>
+                <outlet property="typeLabel" destination="eSq-cq-yJb" id="d0k-s4-yRP"/>
+                <outlet property="yearLabel" destination="n2t-8V-Y9p" id="iC3-7F-UF4"/>
+            </connections>
+            <point key="canvasLocation" x="-28.985507246376812" y="67.96875"/>
+        </tableViewCell>
+    </objects>
+</document>

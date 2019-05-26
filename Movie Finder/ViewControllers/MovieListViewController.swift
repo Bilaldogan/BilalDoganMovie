@@ -26,7 +26,7 @@ class MovieListViewController: BaseViewController,Storyboarded {
         super.viewDidLoad()
         setupNavBar()
         self.title = "Movie Finder"
-        tableView.register(UINib(nibName: "MovieCell", bundle: nil), forCellReuseIdentifier: "MovieCell")
+        tableView.register(nibWithCellClass: MovieCell.self)
         viewModel.loadSampleData()
     }
     
@@ -53,7 +53,7 @@ extension MovieListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MovieCell", for: indexPath) as! MovieCell
+        let cell = tableView.dequeueReusableCell(withClass: MovieCell.self, for: indexPath)
         cell.configureWith(movie: movieList[indexPath.row])
         return cell
     }
@@ -61,7 +61,9 @@ extension MovieListViewController: UITableViewDataSource {
 }
 
 extension MovieListViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+       viewModel.movieSelected(at: indexPath.row)
+    }
 }
 
 extension MovieListViewController: MovieListViewModelDelegate {
@@ -82,6 +84,9 @@ extension MovieListViewController: MovieListViewModelDelegate {
         self.showError(message: error)
     }
     
+    func openDetailWith(imdbID: String) {
+        coordinator?.openDetail(imdbID: imdbID)
+    }
     
 }
 

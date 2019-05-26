@@ -14,12 +14,14 @@ protocol MovieListViewModelProtocol {
     func loadSampleData()
     func getMoviesWith(searchKey: String?)
     func cancelSearch()
+    func movieSelected(at index: Int)
 }
 
 protocol MovieListViewModelDelegate: AnyObject {
     func show(movies: [ShortMoviePresentation])
     func show(error: String)
     func setLoading(show: Bool)
+    func openDetailWith(imdbID: String)
 }
 
 final class MovieListViewModel: MovieListViewModelProtocol {
@@ -69,6 +71,22 @@ final class MovieListViewModel: MovieListViewModelProtocol {
     func cancelSearch() {
         self.searchedMovies.removeAll()
         showMovies()
+    }
+    
+    func movieSelected(at index: Int) {
+        if searchedMovies.count > 0 {
+            if let imdbId = searchedMovies[index].imdbID {
+                self.delegate?.openDetailWith(imdbID: imdbId)
+            } else {
+                self.delegate?.show(error: "An unexpected error has occurred.")
+            }
+        } else {
+            if let imdbId = sampleMovies[index].imdbID {
+                self.delegate?.openDetailWith(imdbID: imdbId)
+            } else {
+                self.delegate?.show(error: "An unexpected error has occurred.")
+            }
+        }
     }
     
     private func showMovies() {

@@ -21,7 +21,18 @@ class MainCoordinator: Coordinator {
         let listVC = MovieListViewController.instantiate()
         listVC.viewModel = MovieListViewModel()
         listVC.coordinator = self
-        
         self.navigationController.pushViewController(listVC, animated: false)
+    }
+    
+    func openDetail(imdbID: String) {
+        let detailVC = MovieDetailViewController.instantiate()
+        detailVC.viewModel = MovieDetailViewModel(imdbID: imdbID)
+        detailVC.coordinator = self
+        self.navigationController.setNavigationBarHidden(true, animated: true)
+        self.navigationController.pushViewController(detailVC, animated: true)
+    }
+    
+    func backTapped() {
+        self.navigationController.popViewController(animated: true)
     }
 }

@@ -12,7 +12,7 @@ import Alamofire
 enum MFEndPoint: String {
     //Mark: -EnpPointStrings
     case searchWithKey = "GET /?s=<search_key>&apikey=<api_key>"
-    
+    case saarchWithId = "GET /?i=<imdb_id>&plot=<plot>&apikey=<api_key>"
 }
 
 public class MFApi {
@@ -39,7 +39,7 @@ public class MFApi {
         params["api_key"] = oMDBApiKey
         
         let endPoint = Endpoint.buildURL(baseURL: baseUrl,endPoint: endPoint.rawValue, values: params as [String : AnyObject])
-        //print(endPoint)
+        print(endPoint)
         
         sessionManager.request(endPoint.URL.absoluteString!,
                                method: endPoint.method,
@@ -74,12 +74,20 @@ public class MFApi {
     }
 
     func getMoviesWith(searchKey: String,
-                              completionHandler: @escaping (Swift.Result<SearchResponseModel, NetworkError>) -> Void) {
+                       completionHandler: @escaping (Swift.Result<SearchResponseModel, NetworkError>) -> Void) {
         call(endPoint: .searchWithKey,
              parameters: ["search_key" : searchKey],
              completionHandler: completionHandler)
-        
     }
+    
+    func getMovieWith(imdbId: String,
+                      completionHandler: @escaping (Swift.Result<FullMovieData, NetworkError>) -> Void) {
+        call(endPoint: .saarchWithId,
+             parameters: ["imdb_id" : imdbId,
+                          "plot" : "full"],
+             completionHandler: completionHandler)
+    }
+    
     // MARK: -Request Methods
 //    public func getVenuesNearBy(city:String,date:String,keyword:String,
 //                                success: @escaping SuccessHandler<VenuesDataModel>,

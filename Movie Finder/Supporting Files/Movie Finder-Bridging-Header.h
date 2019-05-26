@@ -3,3 +3,4 @@
 //
 
 #import "SplashVC.h"
+#import "AppDelegate.h"

@@ -22,6 +22,11 @@ class MainCoordinator: Coordinator {
         listVC.viewModel = MovieListViewModel()
         listVC.coordinator = self
         self.navigationController.pushViewController(listVC, animated: false)
+        
+        //TODO: Ask notificaiton permission after onbarding
+        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+            appDelegate.registerForRemoteNotification()
+        }
     }
     
     func openDetail(imdbID: String) {

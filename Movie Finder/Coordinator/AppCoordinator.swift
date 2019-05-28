@@ -64,7 +64,7 @@ class AppCoordinator:NSObject, Coordinator {
     }
     
     private func startListenNetworkStatus() {
-        //TODO: NetworkReachabilityManager dot working correclty its. if use one instance its stuck on notreachable state
+        //TODO: NetworkReachabilityManager dot working correclty its. if use one instance its stuck on notreachable state. Consider use reachability
         reachabilityManager = NetworkReachabilityManager()
         reachabilityManager?.listener =  { [unowned self] status in
             switch status {

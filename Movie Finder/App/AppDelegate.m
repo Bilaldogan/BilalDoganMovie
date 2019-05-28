@@ -9,7 +9,6 @@
 #import "AppDelegate.h"
 #import "Movie_Finder-Swift.h"
 
-@import Firebase;
 @interface AppDelegate ()
 
 #define SYSTEM_VERSION_GRATERTHAN_OR_EQUALTO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
@@ -23,6 +22,13 @@
     // Override point for customization after application launch.
     [self confiureFirebase];
     [self startApp];
+    
+    NSDictionary *notification = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
+    if (notification) {
+        NSLog(@"app recieved notification from remote%@",notification);
+        [self application:application didReceiveRemoteNotification:notification];
+    }
+    
     return YES;
 }
 
@@ -43,28 +49,10 @@
     [remoteConfig setDefaultsFromPlistFileName:@"RemoteConfigDefaults"];
     FIRRemoteConfigSettings *debugSettings = [[FIRRemoteConfigSettings alloc] initWithDeveloperModeEnabled:true];
     remoteConfig.configSettings = debugSettings;
-}
+    [FIRMessaging messaging].delegate = self;
+    [FIRMessaging messaging].autoInitEnabled = NO;
 
-#pragma mark - Remote Notification Delegate // <= iOS 9.x
 
-- (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings {
-    [application registerForRemoteNotifications];
-}
-
-- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
-    NSString *strDevicetoken = [[NSString alloc]initWithFormat:@"%@",[[[deviceToken description] stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"<>"]] stringByReplacingOccurrencesOfString:@" " withString:@""]];
-    NSLog(@"Device Token = %@",strDevicetoken);
-}
-
--(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
-{
-    NSLog(@"Push Notification Information : %@",userInfo);
-}
-
--(void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
-{
-    NSLog(@"%@ = %@", NSStringFromSelector(_cmd), error);
-    NSLog(@"Error = %@",error);
 }
 
 #pragma mark - UNUserNotificationCenter Delegate // >= iOS 10
@@ -76,17 +64,21 @@
     completionHandler(UNNotificationPresentationOptionAlert | UNNotificationPresentationOptionBadge | UNNotificationPresentationOptionSound);
 }
 
-- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void(^)())completionHandler{
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void(^)(void))completionHandler{
     
     NSLog(@"User Info = %@",response.notification.request.content.userInfo);
     completionHandler();
 }
 
+- (void)application:(UIApplication *)application
+didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    
+    [FIRMessaging messaging].APNSToken = deviceToken;
+    
+}
+
 #pragma mark - Class Methods
 
-/**
- Notification Registration
- */
 - (void)registerForRemoteNotification {
     if(SYSTEM_VERSION_GRATERTHAN_OR_EQUALTO(@"10.0")) {
         UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
@@ -105,5 +97,16 @@
     }
 }
 
+- (void)messaging:(FIRMessaging *)messaging didReceiveRegistrationToken:(NSString *)fcmToken {
+    NSLog(@"FCM registration token: %@", fcmToken);
+    // Notify about received token.
+    NSDictionary *dataDict = [NSDictionary dictionaryWithObject:fcmToken forKey:@"token"];
+    [[NSNotificationCenter defaultCenter] postNotificationName:
+     @"FCMToken" object:nil userInfo:dataDict];
+    // TODO: If necessary send token to application server.
+    // Note: This callback is fired at each app startup and whenever a new token is generated.
+}
+
 
 @end
+

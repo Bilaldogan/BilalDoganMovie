@@ -34,4 +34,12 @@ extension UITableView {
         }
         return cell
     }
+    
+    public func selectedCell() -> UITableViewCell? {
+        if let selectedIndexPath = self.indexPathForSelectedRow {
+            let cell = self.cellForRow(at: selectedIndexPath)
+            return cell
+        }
+        return nil
+    }
 }

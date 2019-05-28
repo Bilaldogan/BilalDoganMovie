@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		067AE41253E2F87FC92EB3A6 /* Pods_Movie_FinderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC88306946B9C34F74EC73DD /* Pods_Movie_FinderTests.framework */; };
+		20141530229C6B97000622C6 /* CustomPushAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2014152F229C6B97000622C6 /* CustomPushAnimator.swift */; };
+		20141532229C887D000622C6 /* CustomPopAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20141531229C887D000622C6 /* CustomPopAnimator.swift */; };
+		2085C22F229D16FC00EFAACD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2085C22E229D16FC00EFAACD /* GoogleService-Info.plist */; };
 		20AC354B2298B4E800C6AD56 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 20AC354A2298B4E800C6AD56 /* AppDelegate.m */; };
 		20AC35512298B4E800C6AD56 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20AC354F2298B4E800C6AD56 /* Main.storyboard */; };
 		20AC35532298B4EA00C6AD56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20AC35522298B4EA00C6AD56 /* Assets.xcassets */; };
@@ -15,7 +18,6 @@
 		20AC35592298B4EA00C6AD56 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 20AC35582298B4EA00C6AD56 /* main.m */; };
 		20AC35632298B4EA00C6AD56 /* Movie_FinderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 20AC35622298B4EA00C6AD56 /* Movie_FinderTests.m */; };
 		20AC356E2298B4EA00C6AD56 /* Movie_FinderUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 20AC356D2298B4EA00C6AD56 /* Movie_FinderUITests.m */; };
-		20AC357F2298BC6F00C6AD56 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 20AC357E2298BC6F00C6AD56 /* GoogleService-Info.plist */; };
 		20AC35822298D37600C6AD56 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AC35812298D37600C6AD56 /* Coordinator.swift */; };
 		20AC35842298D40100C6AD56 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AC35832298D40100C6AD56 /* Storyboarded.swift */; };
 		20AC358A2298D9D200C6AD56 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AC35892298D9D200C6AD56 /* MainCoordinator.swift */; };
@@ -69,6 +71,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2014152F229C6B97000622C6 /* CustomPushAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPushAnimator.swift; sourceTree = "<group>"; };
+		20141531229C887D000622C6 /* CustomPopAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPopAnimator.swift; sourceTree = "<group>"; };
+		2085C22E229D16FC00EFAACD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		20AC35462298B4E800C6AD56 /* Movie Finder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Movie Finder.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		20AC35492298B4E800C6AD56 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		20AC354A2298B4E800C6AD56 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -84,7 +89,6 @@
 		20AC356D2298B4EA00C6AD56 /* Movie_FinderUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Movie_FinderUITests.m; sourceTree = "<group>"; };
 		20AC356F2298B4EA00C6AD56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		20AC357B2298B7C200C6AD56 /* Movie Finder-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Movie Finder-Bridging-Header.h"; sourceTree = "<group>"; };
-		20AC357E2298BC6F00C6AD56 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		20AC35812298D37600C6AD56 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		20AC35832298D40100C6AD56 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		20AC35892298D9D200C6AD56 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
@@ -157,6 +161,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2014152E229C6B65000622C6 /* Animators */ = {
+			isa = PBXGroup;
+			children = (
+				2014152F229C6B97000622C6 /* CustomPushAnimator.swift */,
+				20141531229C887D000622C6 /* CustomPopAnimator.swift */,
+			);
+			path = Animators;
+			sourceTree = "<group>";
+		};
 		20AC353D2298B4E800C6AD56 = {
 			isa = PBXGroup;
 			children = (
@@ -194,6 +207,7 @@
 				20AC35522298B4EA00C6AD56 /* Assets.xcassets */,
 				20AC35542298B4EA00C6AD56 /* LaunchScreen.storyboard */,
 				20AC35572298B4EA00C6AD56 /* Info.plist */,
+				2014152E229C6B65000622C6 /* Animators */,
 				20AE8088229A010200B2012F /* Extensions */,
 				20AC3593229978D800C6AD56 /* Helpers */,
 				20AE807A2299F0DA00B2012F /* CustomComponents */,
@@ -323,7 +337,7 @@
 		20AE807E2299F16800B2012F /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
-				20AC357E2298BC6F00C6AD56 /* GoogleService-Info.plist */,
+				2085C22E229D16FC00EFAACD /* GoogleService-Info.plist */,
 				20AC358B229976EB00C6AD56 /* RemoteConfigDefaults.plist */,
 			);
 			path = Firebase;
@@ -487,9 +501,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				20AC35562298B4EA00C6AD56 /* LaunchScreen.storyboard in Resources */,
+				2085C22F229D16FC00EFAACD /* GoogleService-Info.plist in Resources */,
 				20AE80852299FA5600B2012F /* MovieCell.xib in Resources */,
 				20AC358C229976EB00C6AD56 /* RemoteConfigDefaults.plist in Resources */,
-				20AC357F2298BC6F00C6AD56 /* GoogleService-Info.plist in Resources */,
 				20AC35532298B4EA00C6AD56 /* Assets.xcassets in Resources */,
 				20AE80802299F18A00B2012F /* film-roll.json in Resources */,
 				20AC35512298B4E800C6AD56 /* Main.storyboard in Resources */,
@@ -622,6 +636,7 @@
 				20AC35592298B4EA00C6AD56 /* main.m in Sources */,
 				20AE80842299FA5600B2012F /* MovieCell.swift in Sources */,
 				20AC35912299780400C6AD56 /* SplashVC.m in Sources */,
+				20141530229C6B97000622C6 /* CustomPushAnimator.swift in Sources */,
 				20AE806B2299A74F00B2012F /* EndPointCreator.swift in Sources */,
 				20AE80722299DAE500B2012F /* MovieListViewController.swift in Sources */,
 				20AE80A1229AFE1000B2012F /* MFAnalyticsHelper.swift in Sources */,
@@ -643,6 +658,7 @@
 				20AE80A4229B20AF00B2012F /* NoConnectionVC.swift in Sources */,
 				20AE80752299DF0A00B2012F /* MovielListViewModel.swift in Sources */,
 				20AE808E229AC42500B2012F /* FullMovieData.swift in Sources */,
+				20141532229C887D000622C6 /* CustomPopAnimator.swift in Sources */,
 				20AE808C229ABF1100B2012F /* MovieDetailViewController.swift in Sources */,
 				20AE80772299E3AD00B2012F /* SearcResponseModel.swift in Sources */,
 				20AE80702299CE8D00B2012F /* NetworkError.swift in Sources */,
@@ -834,7 +850,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.modanisa.Movie-Finder";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bilaldogan.MovieFinder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Movie Finder/Supporting Files/Movie Finder-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(PRODUCT_NAME:c99extidentifier)-Swift.h";
@@ -860,7 +876,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.modanisa.Movie-Finder";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bilaldogan.MovieFinder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Movie Finder/Supporting Files/Movie Finder-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(PRODUCT_NAME:c99extidentifier)-Swift.h";

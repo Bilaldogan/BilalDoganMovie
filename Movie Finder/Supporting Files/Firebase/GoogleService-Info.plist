@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>39452741083-3k64ksondhrmdrbaob46qi0gle7earg9.apps.googleusercontent.com</string>
+	<string>39452741083-p2o3mtfa89ipop9vhocd6hv5egguokih.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.39452741083-3k64ksondhrmdrbaob46qi0gle7earg9</string>
+	<string>com.googleusercontent.apps.39452741083-p2o3mtfa89ipop9vhocd6hv5egguokih</string>
 	<key>API_KEY</key>
 	<string>AIzaSyAE-VQ6YGAe7aaOlMuKj44sML96nb0OoI4</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.modanisa.Movie-Finder</string>
+	<string>com.bilaldogan.MovieFinder</string>
 	<key>PROJECT_ID</key>
 	<string>movie-finder-6482f</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,7 +29,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:39452741083:ios:5d2c2d2139b21c08</string>
+	<string>1:39452741083:ios:bd4e98a28aa8acb9</string>
 	<key>DATABASE_URL</key>
 	<string>https://movie-finder-6482f.firebaseio.com</string>
 </dict>

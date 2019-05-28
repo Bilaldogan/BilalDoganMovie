@@ -24,6 +24,7 @@ class MovieDetailViewController: BaseViewController, Storyboarded {
     @IBOutlet weak var awardsLabel: UILabel!
     @IBOutlet weak var languageLabel: UILabel!
     @IBOutlet weak var websiteLabel: UILabel!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     @IBOutlet weak var actorsCollectionView: UICollectionView!
     

@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class MainCoordinator: Coordinator {
+class MainCoordinator:NSObject, Coordinator {
     var childCoordinators: [Coordinator] = [Coordinator]()
     var navigationController: UINavigationController
     
@@ -22,6 +22,7 @@ class MainCoordinator: Coordinator {
         listVC.viewModel = MovieListViewModel()
         listVC.coordinator = self
         self.navigationController.pushViewController(listVC, animated: false)
+        self.navigationController.delegate = self
         
         //TODO: Ask notificaiton permission after onbarding
         if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
@@ -41,4 +42,18 @@ class MainCoordinator: Coordinator {
         self.navigationController.setNavigationBarHidden(false, animated: true)
         self.navigationController.popViewController(animated: true)
     }
+}
+
+extension MainCoordinator: UINavigationControllerDelegate {
+    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        switch operation {
+        case .push:
+            return CustomPushAnimator()
+        case .pop:
+            return CustomPopAnimator()
+        case .none:
+            return nil
+        }
+    }
+    
 }
